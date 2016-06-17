@@ -14,7 +14,7 @@ public class Calculate {
         this.money_per_hour_normal = money_per_hour;
     }
 
-    public Float getCost(String start_date, String start_time, String end_time){
+    public Float getCost(String name, String start_date, String start_time, String end_time){
         float money = 0f;
         String text_date = getDate(start_date);
 
@@ -40,7 +40,8 @@ public class Calculate {
         //money =(Float.parseFloat(hour_normal) * money_per_hour_normal * times_of_non_OT);
         //money = (Float.parseFloat(hour_special) * money_per_hour_normal * times_of_OT);
         //System.out.print (hour_normal/* +"  "+ hour_special*/);
-        //System.out.println(text_date + " " + hour_special + " " + money);
+        System.out.printf("%s วันที่ %s (%s) ทำงานเวลาปกติ %.2f ชม. ทำ OT %.2f ชม. ได้เงิน %.2f บาท", name, start_date, text_date, Float.parseFloat(hour_normal), Float.parseFloat(hour_special), money);
+        System.out.println();
         return money;
     }
     public String getDate(String start_date){ // Mon Tue Wed Thu Fri Sat Sun

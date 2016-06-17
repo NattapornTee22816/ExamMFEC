@@ -39,7 +39,7 @@ public class ManageFile {
                         map_of_person.put(name, 0f);
                     }
                 }
-                Float money = calculate.getCost(splitString(1, line),splitString(2, line), splitString(4, line));
+                Float money = calculate.getCost(name, splitString(1, line),splitString(2, line), splitString(4, line));
                 //System.out.println(name);
                 for (String map_name : map_of_person.keySet()) {
                     if(map_name.equals(name)){
@@ -50,8 +50,11 @@ public class ManageFile {
                 }
             }
             //check data in map
+            System.out.println();
+            System.out.println("----รวมรายได้ของแต่ละคน----");
             for (String map_name : map_of_person.keySet()) {
-                System.out.println(map_name + " get money " + map_of_person.get(map_name) + " bath");
+                System.out.printf("%s ได้เงิน %.2f บาท", map_name, map_of_person.get(map_name));
+                System.out.println();
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
